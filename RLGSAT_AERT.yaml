@@ -1,0 +1,23 @@
+_target_: src.models.RLGSAT_AERT.GSAT
+
+dataset: ${dataset}
+data_dir: ${data_dir}/${dataset}
+actor_lr: 1e-4 # sota: 7e-6
+critic_lr: 1e-5
+n: 200
+gamma: 0.05
+beta: 0.05
+weight_decay: 1e-3
+embedding_model: 'openai'
+fine_tuning: False
+topk: [1, 15, 5, 10, 20]
+#enhanced: False
+#simple: False
+#mode: 'tolerance' # 可选: 'cover', 'dependence', 'save', 'tolerance', 'count',除了tolerance都是越小越好
+#tag_method: 'chatgpt' # 'manual' or 'chatgpt'
+#alpha: 1
+#R: 25
+#sample_mode: 'highest'
+device: 'cuda:0'
+warm_turn: 10
+
